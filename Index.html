@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Portfolio</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<!-- jquery cdn -->
+	<script
+	src="http://code.jquery.com/jquery-3.3.1.min.js"
+	integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+	crossorigin="anonymous"></script>
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+
+	<style>
+		body{
+  			
+  			overflow-x: hidden;
+		}
+		nav{
+			background: rgba(0, 0, 0, 1);
+		}
+		#navbar>ul>li>a{
+			color:white;
+		}
+		.container{
+			padding:10px;
+		}
+		.navigation-bar{
+			padding:0px;
+		}
+		.icon-bar{
+			border:1px solid black;
+			border-color: #4b6694;
+		}
+		#contact a{
+			border:1px solid white;
+			border-radius:10px;
+		}
+		.front-page{
+			color:white;
+			position:relative;
+			text-align:center;
+		}
+		#tags{
+			list-style-type: none;
+		}
+		#tags li{
+			font-size:21px;
+			padding-right:20px;
+			display:inline-block;
+		}
+		#resume-section{
+			margin-top:100px;
+		}
+		#resume-header-body{
+			display:flex;
+		}
+		.name{
+			font-weight:800;
+			text-align: center;
+		}
+		#subtitle{
+		  	display: block;
+		    font-weight: 100;
+		    color: #aaa;
+		    text-transform: uppercase;
+		    line-height: 20px;
+		    font-size: 18px;
+		    letter-spacing: 10px; 
+		    padding-bottom: 10px;
+  			}
+  		#title{
+  			font-size: 34px;
+  			letter-spacing: 10px;
+  			font-weight:100;
+  		}	
+  		#resume-tabs{
+  			list-style-type: none;
+  		}
+  		.resume-btn{
+  			border-radius:10px;
+  			padding:5px 25px;
+  			background-color: #82bb34;
+  			color:white;
+  		}
+  		#resume-tabs li{
+  			font-size: 18px;
+  			color: #aaa;
+  		}
+  		.skill-bar-active{
+  			border-bottom-color: #82bb34;
+  		}
+  		.rb-side{
+  			display:flex;
+  		}
+  		.rb-label{
+  			color:white;
+  			background-color: #82bb34;
+  			border-right:1px solid black;
+  		}
+  		.flex-container{
+  			display: flex;
+  		}
+  		.flex-container li{
+  			font-size:15px;
+  			color: #aaa;
+  		}
+  		.margin-right-38{
+  			margin-right: 38px;
+  		}
+  		.resume-skill{
+  			list-style-type: disc;
+  		}
+  		.resume-skill li{
+  			font-size: 15px;
+    		color: #aaa;
+  		}
+  		.list-type-none{
+  			list-style-type: none;
+  		}
+  		.rb-title{
+  			margin-left:20px;
+  			text-align: left;
+  		}
+  		.border-bottom{
+  			border-bottom:2px solid grey;
+  		}
+  		.border-bottom-small{
+  			border-bottom:1px solid grey;	
+  			border-image: linear-gradient(to top, #000 50%, rgba(0,0,0,0) 50%); 
+  			border-image-slice: 1;
+  			background-clip: content-box;
+  		}
+
+  		#projects-heading h1{
+  			text-align: center;
+  		}
+  		.contact-me{
+  			box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  			justify-content: center;
+  			padding:50px;
+
+  		}
+  		.contact-list{
+  			font-weight: 100;
+  			margin-right: 50px;
+  		}
+  		.contact-heading{
+
+  			font-size: 40px;
+  			margin-bottom: 30px;
+  			border-bottom: 1px solid #337ab7;
+  		}
+  		.contact-subheading{
+  			font-size: 20px;
+  			margin-top: 10px;
+  		}
+  		footer{
+  			background-color: #000;
+  		}
+  		.social-icons li{
+  			font-size: 2em;
+  			padding-right: 30px;
+  		}
+  		.v-header{
+  			height:100vh;
+  			display:flex;
+  			align-items:center;
+  			max-width:960px;
+			padding-left:1rem;
+			padding-right:1rem;
+			margin:auto;
+			text-align:center;
+  		}
+  		.fullscreen-video-wrap{
+			position:absolute;
+			top:0;
+			left:0;
+			width:100%;
+			height:100vh;
+			overflow:hidden;
+		}
+		.fullscreen-video-wrap video{
+  			min-height:100%;
+  			min-width:100%;
+		}
+		.header-overlay{
+			  height:100vh;
+			  position: absolute;
+			  top:0;
+			  left:0;
+			  width:100vw;
+			  z-index:1;
+			  background-image:url("photos/section_overlay.png");
+			  background-repeat: no-repeat;
+			  background-size: cover;
+			}
+		.header-content{
+			  z-index:2;
+			  color:white;
+			  margin:0 auto;
+			}
+
+		.header-content h1{
+			font-weight: bold;
+			font-size:50px;
+			margin-bottom:0;
+		}
+
+		.header-content h2{
+			  display:block;
+			  padding-bottom:2rem;
+		}
+		.man{
+			text-align: center;
+			height:500px;
+			overflow: hidden;
+		}
+
+		.resume-list{
+			margin-bottom: 30px;
+			display:flex;
+		}
+		#firstchild{
+			border-bottom-color:"blue";
+		}
+		.resume-list li{
+			border-bottom:3px solid ;
+			padding-bottom: 10px;
+			text-align: center;
+			margin-right: 10px;
+			list-style-type: none;
+			
+		}	
+
+
+
+
+
+
+
+
+		#resume-header-avatar{
+  				margin-left:150px;
+  				margin-top:-50px;
+  			}
+  			#resume-header-title{
+  				width:50%;
+  				text-align: center;
+  			}
+  			.rb-label{
+  				text-align:right;
+  				height:40px;
+  				padding:10px;
+  			}
+  			.rb-data{
+  				margin-bottom: 10px;
+  			}
+  			.rb-content{
+  				text-transform: uppercase;
+  				font-size: 20px;
+  				margin:auto 0;
+  			}
+  			#projects-section{
+  				margin-top:100px;
+  			}
+  			.project-images{
+  				margin:77px auto;
+  			}
+  			.project-images img{
+  				width:100%;
+  			}
+  			.project-images p{
+  				width:100%;
+  			}
+  			.polaroid{
+  				width: 690px;
+  				box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  				text-align: center;
+  			}
+  			.contain{
+  				width:100%;
+  			}
+
+    		footer div{
+  				width:50%;
+  				padding:15px;
+  			}
+  			#footer-text{
+  				margin:0 auto;
+  				text-align: center;
+  				color:white;
+  			}
+
+		/* Large desktops and laptops */
+		@media (min-width: 1200px) {
+			.resume-list{
+				justify-content: center;
+			}
+		}	
+  		/* Landscape tablets and medium desktops */	
+  		@media  (min-width: 992px) and (max-width: 1199px) {
+	  		.resume-list{
+				justify-content: center;
+			}
+		}
+  		/* Portrait tablets and small desktops */
+		@media (min-width: 768px) and (max-width: 991px) {
+			.resume-list{
+				justify-content: center;
+			}	
+		}
+
+		/* Landscape phones and portrait tablets */
+		@media (max-width: 767px) {
+			.rb-side{
+				justify-content: center;
+			}
+		  .polaroid{
+	  			width:100%;
+	  		}
+	  		.resume-list{
+	  			padding:0px;
+	  			justify-content: center;
+	  		}
+	  		.resume-list li{
+	  			margin-right:0px;
+	  			padding:13px;
+	  		}
+	  		.resume-block{
+	  			padding:0px;
+	  		}
+	  		.flex-container{
+	  			display:block;
+	  		}
+	  		.contact-list{
+	  			text-align: center;
+	  			margin-right: 0px;
+	  		}
+	  		.social-icons{
+	  			justify-content: center;
+	  			display:flex;
+	  		}
+	  		.contact-pic{
+	  			text-align: center;
+	  		}
+	  		.contact-heading{
+	  			font-size: 37px;
+	  		}
+	  		.contact-details ul{
+	  			padding:0px;
+	  		}
+	  		footer div{
+	  			width:100%;
+	  		}
+
+		}
+
+		/* Portrait phones and smaller */
+		@media only screen and (max-width: 480px) {
+			.polaroid{
+	  			width:100%;
+	  		}
+	  		.header-content h1{
+	  			font-size: 36px;
+	  		}
+	  		.resume-list li{
+	  			padding:5px;
+	  		}
+
+		}
+
+
+	</style>
+</head>
+<body onload="settings()">
+	<header>
+		<nav class = "navbar navbar-fixed-top">
+			<div class = "container">
+				<div class = "navbar-header">
+					<a class = "navbar-brand navigation-bar" href = "#">
+						<img src = "photos/header_logo.png" height = "50"  alt="">
+					</a>	
+					<button class="navbar-toggle" data-toggle="collapse" data-target=".navHeaderCollapse">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</div>
+				<div id = "navbar" class="collapse navbar-collapse navHeaderCollapse">
+					<ul class = "nav navbar-nav navbar-right">
+						<li class = "active">
+							<a href = "#">WELCOME</a>
+						</li>
+						<li>
+							<a href = "#resume-section">RESUME</a>
+						</li>
+						<li>
+							<a href = "#projects-section">PROJECTS</a>
+						</li>
+						<li>
+							<a href = "#contact">CONTACT</a>
+						</li>
+					</ul>
+
+				</div>
+				
+			</div>
+			
+		</nav>
+	</header>
+	
+	<section class="v-header">
+	    <div class="fullscreen-video-wrap">
+	      <video src="video/page_video.mp4" autoplay="" loop="">
+	    </video>
+	    </div>
+	    <div class="header-overlay"></div>
+	    <div class="header-content text-md-center">
+	      <h1>AVINASH MACHAVARAPU</h1>
+	      <h2>Web Developer</h2>
+	      <div id = "skills"  class = "front-page">
+					<ul id = "tags" class = "">
+						<li>#frontend </li>
+						<li>#Javascript </li>
+						<li>#CSS </li>
+						<li>#React </li>
+						<li>#NodeJS </li>
+					</ul>
+				</div>
+	    </div>
+  </section>
+
+	<section id = "resume-section">
+		
+		<div id = "resume-header" class = "container">
+			<div class = "row">
+				<div class = "col-md-3">
+					<img src = "photos/mypik.jpg" width = 100%>
+				</div>
+				<div class = "col-md-9">
+					<h1 class = "name">RESUME</h1>
+					<h2></h2>
+					<ul class = "row resume-list">
+						<li class = "col-md-6 list" id = "firstchild">
+							<button onclick = "displayData('skills')" class = "resume-btn">skills</button>
+						</li>
+						<li class = "col-md-6 list">
+							<button class = "resume-btn" onclick = "displayData('experience')">experience</button>
+						</li>
+						<li class = "col-md-6 list">
+							<button class = "resume-btn" onclick = "displayData('education')">education</button>
+						</li>
+					</ul>
+					<div class = "tabs">
+						<ul id = "skills-list" class = "resume-block">
+							<li class = "list-type-none">
+								<div class = "rb-side">
+									<div class = "rb-label">
+										Frontend
+									</div>
+									<div class = "rb-content">
+										<div class = "rb-title">
+											Javascript
+										</div>
+										<div class = "rb-data">
+											<ul class = "flex-container resume-skill">
+												<li class = "margin-right-38">
+													ES6
+												</li>
+												<li class = "margin-right-38">
+													jQuery
+												</li>
+												<li class = "margin-right-38">
+													React
+												</li>
+												<li class = "margin-right-38">
+													React Native
+												</li>
+											</ul>
+										</div>
+
+										<div class = "rb-title">
+											HTML & CSS
+										</div>
+										<div class = "rb-data">
+											<ul class = "flex-container resume-skill">
+												<li class = "margin-right-38">
+													Bootstrap
+												</li>
+												<li class = "margin-right-38">
+													CSS Grid
+												</li>
+												<li class = "margin-right-38">
+													Google Map API
+												</li>
+												<li class = "margin-right-38">
+													Canvas
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</li>
+
+
+							<li class = "list-type-none">
+								<div class = "rb-side">
+									<div class = "rb-label">
+										Backend
+									</div>
+									<div class = "rb-content">
+										<div class = "rb-title">
+											Backend
+										</div>
+										<div class = "rb-data">
+											<ul class = "flex-container resume-skill">
+												<li class = "margin-right-38">
+													NodeJS
+												</li>
+												<li class = "margin-right-38">
+													AWS(S3, EC2)
+												</li>
+												<li class = "margin-right-38">
+													MongoDB
+												</li>
+												<li class = "margin-right-38">
+													Python
+												</li>
+											</ul>
+										</div>
+
+										<div class = "rb-title">
+											TOOLSET
+										</div>
+										<div class = "rb-data">
+											<ul class = "flex-container resume-skill">
+												<li class = "margin-right-38">
+													Git
+												</li>
+												<li class = "margin-right-38">
+													WebStorm
+												</li>
+												
+											</ul>
+										</div>
+									</div>
+								</div>
+							</li>
+						</ul>
+
+						<ul id = "experience-list" class = "resume-block">
+							<li class = "list-type-none">
+								<div class = "rb-side">
+									<div class = "rb-label">
+										2017
+									</div>
+									<div class = "rb-content">
+										<div class = "rb-title">
+											Slightech
+										</div>
+										<div class = "rb-data">
+											<ul class = "resume-skill">
+												<li class = "margin-right-38">
+													Developed page layouts, Navigations and presented designs concepts
+												</li>
+												<li class = "margin-right-38">
+													Extensive use of Twitter Bootstrap framework to achieve RWD, i.e., makes the portal compatible for various screen resolutions.
+												</li>
+												<li class = "margin-right-38">
+													Worked on implementing CSS smart sprites in the program to reduce the number of HTTP requests to the server.  
+												</li>
+												<li class = "margin-right-38">
+													Worked on Javascript events along with dynamic grid creation and layout management.
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</li>
+
+
+							<li class = "list-type-none">
+								<div class = "rb-side">
+									<div class = "rb-label">
+										2015
+									</div>
+									<div class = "rb-content">
+										<div class = "rb-title">
+											Abhinav Infosoft 
+										</div>
+										<div class = "rb-data">
+											<ul class = "resume-skill">
+												<li class = "margin-right-38">
+													Designed and developed a responsive website using Bootstrap grid system for layout using HTML5, CSS, JavaScript and Bootstrap.
+												</li>
+												<li class = "margin-right-38">
+													Used AJAX for implementing dynamic Webpages where the content was fetched via API calls and updated the DOM (JSON Parsing).
+												</li>
+												<li class = "margin-right-38">
+													Worked on implementing CSS smart sprites in the program to reduce the number of HTTP requests to the server.
+												</li>
+												<li class = "margin-right-38">
+													Involved in designing and development of web pages using PhotoShop, HTML and CSS
+												</li>
+											</ul>
+										</div>
+
+										
+
+
+									</div>
+								</div>
+							</li>
+						</ul>
+
+						<ul id = "education-list" class = "resume-block">
+							<li class = "list-type-none">
+								<div class = "rb-side">
+									<div class = "rb-label">
+										2016
+									</div>
+									<div class = "rb-content">
+										<div class = "rb-title">
+											Kent State University
+										</div>
+										<div class = "rb-data">
+											<ul class = "flex-container resume-skill">
+												<li class = "margin-right-38">
+													Master in Computers and Information Science with 3.7 GPA
+												</li>	
+											</ul>
+										</div>
+									</div>
+								</div>
+							</li>
+
+							<li class = "list-type-none">
+								<div class = "rb-side">
+									<div class = "rb-label">
+										2014
+									</div>
+									<div class = "rb-content">
+										<div class = "rb-title">
+											JNTUH University
+										</div>
+										<div class = "rb-data">
+											<ul class = "flex-container resume-skill">
+												<li class = "margin-right-38">
+													bachelor of Technology in Information Technology with 3.0 GPA
+												</li>	
+											</ul>
+										</div>
+									</div>
+								</div>
+							</li>
+						</ul>
+				</div>
+				</div>
+				
+			</div>		
+		</div>
+	</section>
+
+	<section id = "projects-section">
+		<div class = "container">
+			<div id = "projects-heading">
+				<h1>SELECTED PROJECTS</h1>
+			</div>
+			<div class = "project-images polaroid">
+				<img src = "photos/clicker_app_gif.gif">
+				<div class="container contain">
+    				<p>A simple Javascript application to figure out how many clicks can be made within 10 seconds</p>
+  				</div>
+			</div>
+			<div class = "project-images polaroid">
+				<img src = "photos/geocoding.gif">
+				<div class="container contain">
+    				<p>American flag</p>
+  				</div>
+
+			</div>
+			<div class = "project-images polaroid">
+				<img src = "photos/doctor_app.gif">
+				<div class="container contain">
+    				<p>doctor application</p>
+  				</div>
+
+			</div>
+			<div class = "project-images polaroid">
+				<img src = "photos/pokemon_shopping.gif">
+				<div class="container contain">
+    				<p>A python application</p>
+  				</div>
+
+			</div>
+			<div class = "project-images polaroid">
+				<img src = "photos/american flag.gif">
+				<div class="container contain">
+    				<p>American flag</p>
+  				</div>
+
+			</div>
+
+		</div>	
+	</section>
+ 
+	<section id = "contact">
+		<div class = "contact-me container flex-container ">
+			<div class = "contact-list">
+				<div class = "contact-heading">
+					GET IN TOUCH
+				</div>
+				<div>
+					<div class = "contact-subheading">
+						CONTACT DETAILS
+					</div>
+					<div class = "contact-details">
+						<ul class = "list-type-none">
+							<li>
+								<i class="fas fa-thumbtack" style="margin-right:10px">
+								</i>Fremont, California
+							</li>
+							<li><i class="fas fa-envelope" style="margin-right:10px"></i>macha.avi@gmail.com</li>
+						</ul>	
+					</div>
+					<div class = "contact-subheading">
+						SOCIAL
+					</div>
+					<div class = "contact-social">
+						<ul class = "social-icons list-type-none flex-container">
+							<li>
+								<a href="https://github.com/greatavi">
+									<i class="fab fa-github"></i>
+								</a>
+							</li>
+							<li>
+								<a href="https://www.linkedin.com/in/avinash-mac">
+									<i class="fab fa-linkedin"></i>
+								</a>
+							</li>	
+						</ul>	
+					</div>
+				</div>
+			</div>
+
+
+			<div class = "contact-pic">
+				<img src = "photos/mypik.jpg" width = "150px">
+			</div>
+		</div>
+	</section>
+	<footer>
+		<div id = "footer-content" class = "container">
+			<div id = "footer-text">
+				All Rights reserved 2017-2018
+			</div>
+		</div>
+	</footer>
+<script src = "app.js"></script>
+<script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+
+</body>
+</html>

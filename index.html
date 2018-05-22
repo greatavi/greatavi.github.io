@@ -17,14 +17,22 @@
 
 	<style>
 		body{
-  			
+			font-family: Courier, sans-serif;
   			overflow-x: hidden;
 		}
 		nav{
 			background: rgba(0, 0, 0, 1);
 		}
 		#navbar>ul>li>a{
-			color:white;
+			border: 1px solid white;
+			border-radius: 30px;
+			background-color: rgb(76,103,147);
+			color: white;
+			margin-right: 5px;
+		}
+		#navbar>ul>li>a:hover {
+			font-size:17px;
+			background-color: darkgray;
 		}
 		.container{
 			padding:10px;
@@ -235,13 +243,12 @@
 			margin-right: 10px;
 			list-style-type: none;
 			
-		}	
+		}
 
 
-
-
-
-
+		video {
+			background: transparent url('./photos/computer_poster_final.jpg') 50% 50% / cover no-repeat ;
+		}
 
 
 		#resume-header-avatar{
@@ -295,6 +302,30 @@
   				text-align: center;
   				color:white;
   			}
+
+			button{
+			text-align: center;
+			display: inline-block;
+			background-color: #1984c3;
+			color: #fff;
+			font-size: 1.5em;
+			font-family: Courier, sans-serif;
+			padding: 1em 5em;
+			text-decoration: none;
+			text-transform: uppercase;
+			border-radius: 0.5em;
+			border-bottom: 0.25em solid #0f5177;
+			-moz-transition: 0.1s;
+			-webkit-transition: 0.1s;
+			transition: 0.1s;
+			box-shadow: 0 2px 3px #ccc;
+			position: relative;
+			}
+			button:hover{
+				background-color: #1e9feb;
+				border-bottom-width: 0;
+				margin-top: 0.2em;
+			}
 
 		/* Large desktops and laptops */
 		@media (min-width: 1200px) {
@@ -413,14 +444,15 @@
 			
 		</nav>
 	</header>
-	
+
 	<section class="v-header">
 	    <div class="fullscreen-video-wrap">
-	      <video  autoplay="" loop="" poster = "photos/computer-poster.png">
+	      <video  autoplay muted loop >
 			  <source src="video/page_video.mp4" type = "video/mp4">
+
 	    </video>
 	    </div>
-	    <div class="header-overlay"></div>
+
 	    <div class="header-content text-md-center">
 	      <h1>AVINASH MACHAVARAPU</h1>
 	      <h2>Web Developer</h2>
@@ -480,7 +512,7 @@
 													React
 												</li>
 												<li class = "margin-right-38">
-													React Native
+													Redux
 												</li>
 											</ul>
 										</div>
@@ -545,6 +577,9 @@
 												</li>
 												<li class = "margin-right-38">
 													WebStorm
+												</li>
+												<li class = "margin-right-38">
+													IntelliJ
 												</li>
 												
 											</ul>
@@ -670,7 +705,7 @@
 	<section id = "projects-section">
 		<div class = "container">
 			<div id = "projects-heading">
-				<h1>SELECTED PROJECTS</h1>
+				<h1 class = "name">SELECTED PROJECTS</h1>
 			</div>
 			<div class = "project-images polaroid">
 				<img src = "photos/flag-picker-demo-min.gif">

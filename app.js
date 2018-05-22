@@ -2,6 +2,8 @@ function settings(){
 	var experience = document.getElementById("experience-list");
 	var education = document.getElementById("education-list");
 	var resume_list = document.getElementsByClassName("list");
+
+
 	experience.style.display = 'none';
 	education.style.display = 'none';
 	resume_list[0].style.borderBottomColor = "lightgreen";
@@ -40,3 +42,10 @@ function displayData(value){
 		education.style.display = 'none';
 	}
 }
+
+function gotoGithubProjects(e){
+	window.open(e.target.name);
+	return false;
+}
+
+

@@ -399,8 +399,12 @@
 	  		.header-content h1{
 	  			font-size: 36px;
 	  		}
+			.resume-list{
+				display:block;
+			}
 	  		.resume-list li{
 	  			padding:5px;
+				border-bottom: none;
 	  		}
 
 		}
@@ -479,13 +483,13 @@
 					<h1 class = "name">RESUME</h1>
 					<h2></h2>
 					<ul class = "row resume-list">
-						<li class = "col-md-6 list" id = "firstchild">
+						<li class = "col-md-6 col-sm-12 col-xs-12 list" id = "firstchild">
 							<button onclick = "displayData('skills')" class = "resume-btn">skills</button>
 						</li>
-						<li class = "col-md-6 list">
+						<li class = "col-md-6 col-sm-12 col-xs-12 list">
 							<button class = "resume-btn" onclick = "displayData('experience')">experience</button>
 						</li>
-						<li class = "col-md-6 list">
+						<li class = "col-md-6 col-sm-12 col-xs-12 list">
 							<button class = "resume-btn" onclick = "displayData('education')">education</button>
 						</li>
 					</ul>
